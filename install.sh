@@ -87,18 +87,6 @@ fi
 
 cd $HOME
 
-if [ -e $HOME/gnome-terminal ]; then
-  printf "%s ~ Dracula Theme para Gnome Terminal já está instalado%s\n" "$YELLOW" "$NORMAL"
-else
-  cd $HOME
-  git clone https://github.com/dracula/gnome-terminal &> /dev/null
-  cd gnome-terminal
-  ./install.sh -s Dracula -p Default --skip-dircolors
-  cd $HOME/dotfiles-linux
-  printf "%s + Dracula Theme para Gnome Terminal Instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
-  cd $HOME
-fi
-
 if [ -e $HOME/.vim/pack/themes/opt/dracula ]; then
   printf "%s ~ Dracula Theme para VIM já está instalado%s\n" "$YELLOW" "$NORMAL"
 else
@@ -184,4 +172,22 @@ fi
 printf "%s ################################################%s\n" "$GREEN" "$NORMAL"
 printf "%s # Instalação dos Dotfiles-linux finalizada !!! #%s\n" "$GREEN" "$NORMAL"
 printf "%s ################################################%s\n" "$GREEN" "$NORMAL"
+
+echo "
+###########################
+#  Instale o tema Dracula #
+###########################
+if [ -e $HOME/gnome-terminal ]; then
+  printf "%s ~ Dracula Theme para Gnome Terminal já está instalado%s\n" "$YELLOW" "$NORMAL"
+else
+  cd $HOME
+  git clone https://github.com/dracula/gnome-terminal &> /dev/null
+  cd gnome-terminal
+  ./install.sh
+  cd $HOME/dotfiles-linux
+  printf "%s + Dracula Theme para Gnome Terminal Instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
+  cd $HOME
+fi
+"
+
 exec bash; source $HOME/.bashrc
