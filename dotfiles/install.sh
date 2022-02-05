@@ -24,21 +24,21 @@ fi
 
 if [[ $(cat /etc/issue) == *"Debian"* ]]; then
   if ! type vim &> /dev/null || ! type dconf &> /dev/null || ! type nvim &> /dev/null; then
-    su -c "xargs -a apt_packages.txt apt-get install -y"
+    su -c "xargs -a https://souovan.github.io/dotfiles/apt_packages.txt apt-get install -y"
   else
     printf "%s ~ vim e dconf-cli e nvim já estão instalados%s\n" "$YELLOW" "$NORMAL"
   fi
 
 elif  [[ $(cat /etc/issue) == *"Ubuntu"* ]]; then 
   if ! type vim &> /dev/null || ! type dconf &> /dev/null || ! type nvim &> /dev/null; then
-    sudo apt-get install -y $(< apt_packages.txt)
+    sudo apt-get install -y $(< https://souovan.github.io/dotfiles/apt_packages.txt)
   else
     printf "%s ~ vim e dconf-cli e nvim já estão instalados%s\n" "$YELLOW" "$NORMAL"
   fi
 
 elif [[ $(cat /etc/issue) == *"elementary"* ]]; then
   if ! type vim &> /dev/null || ! type nvim &> /dev/null; then
-    sudo apt-get install -y $(< apt_packages.txt)
+    sudo apt-get install -y $(< https://souovan.github.io/dotfiles/apt_packages.txt)
   else
     printf "%s ~ vim e dconf-cli e nvim já estão instalados%s\n" "$YELLOW" "$NORMAL"
   fi
@@ -62,14 +62,14 @@ elif [[ $(cat /etc/issue) == *"elementary"* ]]; then
 
 elif [[ $(cat /etc/redhat-release) == *"Fedora"* ]]; then
   if ! type vim &> /dev/null || ! type dconf &> /dev/null || ! type nvim &> /dev/null; then
-    sudo dnf install -y $(< dnf_packages.txt)
+    sudo dnf install -y $(< https://souovan.github.io/dotfiles/dnf_packages.txt)
   else
     printf "%s ~ vim e dconf-cli e nvim já estão instalados%s\n" "$YELLOW" "$NORMAL"
   fi
 
 elif [[ $(cat /etc/redhat-release) == *"Red Hat Enterprise Linux"* ]]; then
   if ! type vim &> /dev/null || ! type dconf &> /dev/null || ! type nvim &> /dev/null; then
-    su -c "xargs -a dnf_rhel_packages.txt dnf install -y && \
+    su -c "xargs -a https://souovan.github.io/dotfiles/dnf_rhel_packages.txt dnf install -y && \
            curl -o /usr/local/bin/nvim -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && \
            chmod +x /usr/local/bin/nvim"
   else
