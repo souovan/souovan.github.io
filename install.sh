@@ -92,7 +92,7 @@ else
   cd $HOME
   git clone https://github.com/dracula/gnome-terminal &> /dev/null
   cd gnome-terminal
-  ./install.sh
+  ./install.sh -s Dracula -p Default --skip-dircolors
   cd $HOME/dotfiles-linux
   printf "%s + Dracula Theme para Gnome Terminal Instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
   cd $HOME
