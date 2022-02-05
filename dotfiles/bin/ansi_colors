@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# ------------------------------------------------
+# Script   : ansi_colors
+# Descrição:
+# Versão   : 1.0.0
+# Autor    : Vinicius https://github.com/souovan
+# Data     : 18/12/2021
+# ------------------------------------------------
+# Uso:
+# ------------------------------------------------
+
+# MIT License
+
+# Copyright (c) 2021 Vinicius Antonio do Nascimento
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+echo -e "\nMy ansi colors are\n \e[0;30mblack\e[0m \e[0;33mbrown\e[0m \e[0;37mgray\e[0m \e[0;34mblue\e[0m \e[0;32mgreen\e[0m \e[0;36mcyan\e[0m \e[0;31mred\e[0m \e[0;35mpurple\e[0m \e[1;37mwhite\e[0m \e[1;33myellow\e[0m \e[1;30mdark grey\e[0m \e[1;34mlight blue\e[0m \e[1;32mlight green\e[0m \e[1;36mlight cyan\e[0m \e[1;31mlight red\e[0m \e[1;35mlight purple\e[0m \n"

@@ -1,0 +1,134 @@
+#!/usr/bin/env bash
+# ------------------------------------------------
+# Script   : brightness
+# Descrição: A program to set brightness of multiple monitor
+# Versão   : 1.0.0
+# Autor    : Vinicius https://github.com/souovan
+# Data     : 30/12/2021
+# ------------------------------------------------
+# Uso: brightness <brightness-level>
+# ------------------------------------------------
+
+# MIT License
+
+# Copyright (c) 2021 Vinicius Antonio do Nascimento
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+version="1.0.0"
+
+help="
+    A program to set brightness of multiple monitor
+
+    usage: brightness <brightness-level>
+
+    option:
+    brightness-level     brightness level must be in range 0.1 to 1
+
+    optional arguments:
+    -h | --help          show this help message and exit
+    -v | --version       show program's version number and exit
+
+    (c) 2021 - Vinicius Antonio do Nascimento - https://github.com/souovan 
+"
+
+# Check if the first argument is -h or --help and show help
+[[ $1 = "-h" || $1 = "--help" ]] && echo "$help" && exit 0
+
+# Check if the first argument is -v or --version and show script version
+[[ $1 = "-v" || $1 = "--version" ]] && echo "$version" && exit 0
+
+# set brightness level from user input & reset if no args provided
+if [ -z "$1" ]
+then
+  echo 'Default brightness 100%'
+  LEVEL=1
+fi
+
+# Check if the argument is anything else than the expected range [from 0.1 to 1]
+[[ $1 =~ ^[a-zA-Z]+$ ]] && echo "$help" && exit 1
+[[ $1 =~ ^-[a-zA-Z]+$ ]] && echo "$help" && exit 1
+
+case $1 in
+  0.0)
+  echo "$help"
+  exit 1
+  ;;
+
+  0)
+  echo "$help"
+  exit 1
+  ;;
+
+  0.1)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+
+  0.2)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+  
+  0.3)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+
+  0.4)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+
+  0.5)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+
+  0.6)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+
+  0.7)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+
+  0.8)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+
+  0.9)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+
+  1)
+  echo "Setting brightness level to" $1
+  LEVEL=$1
+  ;;
+esac
+
+# get list of screens,trim noise and remove first line (count)
+MONITORS=$(xrandr --listactivemonitors | tail -n +2 | awk '{print $NF}');
+
+# change brightness level per monitor at a time
+for each in $MONITORS; do xrandr --output $each --brightness $LEVEL; done
