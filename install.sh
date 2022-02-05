@@ -22,6 +22,12 @@ fi
 # Debian ou Ubuntu ou ElementaryOS
 # cat /etc/issue
 
+if [ -e $HOME/dotfiles-linux ]; then
+  cd $HOME
+  git clone https://github.com/souovan/dotfiles-linux.git &> /dev/null
+  cd dotfiles-linux
+fi
+
 if [[ $(cat /etc/issue) == *"Debian"* ]]; then
   if ! type vim &> /dev/null || ! type dconf &> /dev/null || ! type nvim &> /dev/null; then
     su -c "xargs -a apt_packages.txt apt-get install -y"
@@ -77,6 +83,8 @@ elif [[ $(cat /etc/redhat-release) == *"Red Hat Enterprise Linux"* ]]; then
   fi
 
 fi
+
+cd $HOME
 
 if [ -e $HOME/gnome-terminal ]; then
   printf "%s ~ Dracula Theme para Gnome Terminal já está instalado%s\n" "$YELLOW" "$NORMAL"
