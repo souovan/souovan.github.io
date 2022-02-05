@@ -95,6 +95,7 @@ else
   ./install.sh
   cd $HOME/dotfiles-linux
   printf "%s + Dracula Theme para Gnome Terminal Instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
+  cd $HOME
 fi
 
 if [ -e $HOME/.vim/pack/themes/opt/dracula ]; then
@@ -105,6 +106,7 @@ else
   git clone https://github.com/dracula/vim.git dracula &> /dev/null
   cd $HOME/dotfiles-linux
   printf "%s + Dracula Theme para VIM instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
+  cd $HOME
 fi
 
 # Instala Fonts para Powerline
@@ -117,6 +119,7 @@ else
   ./install.sh
   cd $HOME/dotfiles-linux
   printf "%s + Pacote de Fontes Nerd instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
+  cd $HOME
 fi
 
 if [[ $(cat /etc/issue) == *"elementary"* ]]; then
@@ -149,6 +152,7 @@ else
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim &> /dev/null
   cd -
   printf "%s + VIM Vundle instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
+  cd $HOME
 fi
 
 if [ -e $HOME/.bashrc ]; then
