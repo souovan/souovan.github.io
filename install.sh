@@ -101,8 +101,8 @@ fi
 if [ -e $HOME/.vim/pack/themes/opt/dracula ]; then
   printf "%s ~ Dracula Theme para VIM já está instalado%s\n" "$YELLOW" "$NORMAL"
 else
-  mkdir -p ~/.vim/pack/themes/opt
-  cd ~/.vim/pack/themes/opt
+  mkdir -p $HOME/.vim/pack/themes/opt
+  cd $HOME/.vim/pack/themes/opt
   git clone https://github.com/dracula/vim.git dracula &> /dev/null
   cd $HOME/dotfiles-linux
   printf "%s + Dracula Theme para VIM instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
