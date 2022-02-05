@@ -177,17 +177,11 @@ echo "
 ###########################
 #  Instale o tema Dracula #
 ###########################
-if [ -e $HOME/gnome-terminal ]; then
-  printf "%s ~ Dracula Theme para Gnome Terminal já está instalado%s\n" "$YELLOW" "$NORMAL"
-else
-  cd $HOME
-  git clone https://github.com/dracula/gnome-terminal &> /dev/null
-  cd gnome-terminal
-  ./install.sh
-  cd $HOME/dotfiles-linux
-  printf "%s + Dracula Theme para Gnome Terminal Instalado com sucesso!%s\n" "$BLUE" "$NORMAL"
-  cd $HOME
-fi
+
+cd $HOME
+git clone https://github.com/dracula/gnome-terminal &> /dev/null
+cd gnome-terminal
+./install.sh
 "
 
 exec bash; source $HOME/.bashrc
