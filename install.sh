@@ -133,7 +133,7 @@ fi
 # Instala Font Droid Sans Mono Nerd to Linux fonts directory
 # used to show icons on vim/nvim
 font_dir="$HOME/.local/share/fonts"
-cp "Droid Sans Mono Nerd Font Complete.otf" "$font_dir/"
+cp $HOME/dotfiles-linux/"Droid Sans Mono Nerd Font Complete.otf" "$font_dir/"
 
 # Configura a fonte do terminal para Droid Sans Mono for Powerline Regular para Ubuntu e Debian
 if [[ $(cat /etc/issue) == *"Ubuntu"* ]] || [[ $(cat /etc/issue) == *"Debian"* ]]; then
@@ -157,26 +157,26 @@ fi
 
 if [ -e $HOME/.bashrc ]; then
   mv $HOME/.bashrc $HOME/.bashrc.old
-  cp ./.bashrc $HOME/
+  cp $HOME/dotfiles-linux/.bashrc $HOME/
 else
-  cp ./.bashrc $HOME/
+  cp $HOME/dotfiles-linux/.bashrc $HOME/
   printf "%s + .bashrc substituido, original renomeado para .bashrc.old%s\n" "$BLUE" "$NORMAL"
 fi
 
 if [ -e $HOME/.vimrc ]; then
   mv $HOME/.vimrc $HOME/.vimrc.old
-  cp ./.vimrc $HOME/
+  cp $HOME/dotfiles-linux/.vimrc $HOME/
 else
-  cp ./.vimrc $HOME/
+  cp $HOME/dotfiles-linux/.vimrc $HOME/
   printf "%s + .vimrc substituido, original renomeado para .vimrc.old%s\n" "$BLUE" "$NORMAL"
 fi
 
 if [ -e $HOME/.config/nvim/init.vim ]; then
   mv $HOME/.config/nvim/init.vim $HOME/.config/nvim/init.vim.old
-  cp ./.config/nvim/init.vim $HOME/.config/nvim/
+  cp $HOME/dotfiles-linux/.config/nvim/init.vim $HOME/.config/nvim/
 else
   mkdir -p $HOME/.config/nvim/
-  cp ./.config/nvim/init.vim $HOME/.config/nvim/
+  cp $HOME/dotfiles-linux/.config/nvim/init.vim $HOME/.config/nvim/
   printf "%s + init.vim substituído, original renomeado para init.vim.old%s\n" "$BLUE" "$NORMAL"
 fi
 
