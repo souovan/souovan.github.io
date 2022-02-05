@@ -21,6 +21,7 @@ fi
 # cat /etc/redhat-release
 # Debian ou Ubuntu ou ElementaryOS
 # cat /etc/issue
+sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 if [ -e $HOME/dotfiles-linux ]; then
   cd $HOME
