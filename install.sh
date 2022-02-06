@@ -21,7 +21,7 @@ fi
 # cat /etc/redhat-release
 # Debian ou Ubuntu ou ElementaryOS
 # cat /etc/issue
-sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
 if [ -e $HOME/dotfiles-linux ]; then
   cd $HOME
@@ -179,9 +179,9 @@ printf "%s # Instalação dos Dotfiles-linux finalizada !!! #%s\n" "$GREEN" "$NO
 printf "%s ################################################%s\n" "$GREEN" "$NORMAL"
 
 echo "
-###########################
-#  Instale o tema Dracula #
-###########################
+ ################################################
+ # Copie e execute para instalar o tema Dracula #
+ ################################################
 
 cd $HOME
 git clone https://github.com/dracula/gnome-terminal &> /dev/null
