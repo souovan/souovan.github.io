@@ -32,7 +32,7 @@ fi
 if [[ $(cat /etc/issue) == *"Debian"* ]]; then
   if ! type vim &> /dev/null || ! type dconf &> /dev/null || ! type nvim &> /dev/null; then
     echo "Digite a senha e aguarde a instalação das dependências"
-    su -c "xargs -a apt_packages.txt apt-get install -y" &> /dev/null
+    sudo "xargs -a apt_packages.txt apt-get install -y" &> /dev/null
   else
     printf "%s ~ vim e dconf-cli e nvim já estão instalados%s\n" "$YELLOW" "$NORMAL"
   fi
