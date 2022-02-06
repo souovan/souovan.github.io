@@ -25,6 +25,7 @@ bash -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/in
 
 if [ -e $HOME/dotfiles-linux ]; then
   cd $HOME
+else
   git clone https://github.com/souovan/dotfiles-linux.git &> /dev/null
   cd dotfiles-linux
 fi
